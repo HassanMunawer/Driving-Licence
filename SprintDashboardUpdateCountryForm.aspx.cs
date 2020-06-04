@@ -11,13 +11,13 @@ public partial class SprintDashboardUpdateCountryForm : System.Web.UI.Page
     DataTable table = new DataTable();
     Properties variables = new Properties();
     Insertion insert = new Insertion();
-    edit ed = new edit();
+    //edit ed = new edit();
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
-            if (Session["username"] != null && Session["password"] != null)
-            {
+            //if (Session["username"] != null && Session["password"] != null)
+            //{
 
                 if (!IsPostBack)
                 {
@@ -32,8 +32,8 @@ public partial class SprintDashboardUpdateCountryForm : System.Web.UI.Page
                     slcteditCountry.DataValueField = "Value";
                     slcteditCountry.DataBind();
                 }
-            }
-            else { Response.Redirect("SignIn.aspx"); }
+            //}
+            //else { Response.Redirect("SignIn.aspx"); }
         }
         catch (Exception ex) { }
     }
