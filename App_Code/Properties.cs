@@ -198,9 +198,11 @@ public class Properties
 
     public string SprintInsertCity_CityName { get; set; }
     public int SprintInsertCity_FK_Createdby { get; set; }
+    public int SprintInsertCity_FK_Country { get; set; }
 
     public string SprintInsertDistrict_DistrictName { get; set; }
     public int SprintInsertDistrict_FK_Createdby { get; set; }
+    public int SprintInsertDistrict_FK_City { get; set; }
 
     public string SprintInsertUserInfo_email { get; set; }
     public string SprintInsertUserInfo_Password { get; set; }

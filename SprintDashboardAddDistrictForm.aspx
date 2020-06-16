@@ -50,6 +50,17 @@
                                                     </div>
                                                     <div class="card-block">
                                                         <form runat ="server">
+
+                                                             <div class="form-group row">
+                                                             <div class="col-md-4 col-lg-2">
+                                                                 <label for="userName-1" class="block">Select City</label>
+                                                             </div>
+                                                             <div class="col-md-8 col-lg-10">
+                                                                 <asp:DropDownList ID="slctCity" runat="server" name="select" class="form-control form-control-primary" required="required"></asp:DropDownList>
+                                                               
+                                                             </div>
+                                                          </div>
+
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">District</label>
                                                                 <div class="col-sm-10">

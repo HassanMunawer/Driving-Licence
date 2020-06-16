@@ -38,15 +38,15 @@ public partial class SignIn : System.Web.UI.Page
         {
             email2 = table.Rows[0][1].ToString().Trim();
             password2 = table.Rows[0][2].ToString().Trim();
-            role = Convert.ToInt32(table.Rows[0][5]);
+            role = Convert.ToInt32(table.Rows[0][3]);
             Session["username"] = table.Rows[0][0].ToString().Trim();
             Session["password"] = table.Rows[0][2].ToString().Trim();
             Session["role"] = table.Rows[0][3].ToString().Trim();
-            Session["status"] = table.Rows[0][4].ToString().Trim();
+            //Session["status"] = table.Rows[0][4].ToString().Trim();
 
             if (email2 == txtemail.Value && password2 == password.Value && role == 1)
             {
-                Response.Redirect("Dashboard.aspx");
+                Response.Redirect("SprintDashboardAddUsersForm.aspx");
             }
 
             else if (email2 == txtemail.Value && password2 == password.Value && role == 2)

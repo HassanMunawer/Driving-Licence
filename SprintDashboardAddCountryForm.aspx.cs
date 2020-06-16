@@ -11,7 +11,8 @@ public partial class SprintDashboardAddCountryForm : System.Web.UI.Page
     Insertion insert = new Insertion();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["username"] != null && Session["password"] != null) { }
+        else { Response.Redirect("SignIn.aspx"); }
     }
 
     protected void btnsubmit_Click(object sender, EventArgs e)

@@ -199,7 +199,7 @@ public class Insertion
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_insertcountry";
             cmd.Connection = Getconnected.getconnecting();
-            cmd.Parameters.AddWithValue("@Country", P.AdminInsertcountrycountry);
+            cmd.Parameters.AddWithValue("@Country", P.SprintInsertCountry_CountryName);
             cmd.Parameters.AddWithValue("@FK_Createdon", P.SprintInsertCountry_FK_Createdby);
             cmd.ExecuteNonQuery();
         }
@@ -213,6 +213,7 @@ public class Insertion
             cmd.CommandText = "sp_insertcity";
             cmd.Connection = Getconnected.getconnecting();
             cmd.Parameters.AddWithValue("@City", P.SprintInsertCity_CityName);
+            cmd.Parameters.AddWithValue("@FK_Country", P.SprintInsertCity_FK_Country);
             cmd.Parameters.AddWithValue("@FK_Createdon", P.SprintInsertCity_FK_Createdby);
             cmd.ExecuteNonQuery();
         }
@@ -227,6 +228,7 @@ public class Insertion
             cmd.Connection = Getconnected.getconnecting();
             cmd.Parameters.AddWithValue("@District", P.SprintInsertDistrict_DistrictName);
             cmd.Parameters.AddWithValue("@FK_Createdon", P.SprintInsertDistrict_FK_Createdby);
+            cmd.Parameters.AddWithValue("@FK_City", P.SprintInsertDistrict_FK_City);
             cmd.ExecuteNonQuery();
         }
     }

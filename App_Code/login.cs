@@ -16,7 +16,7 @@ public class login
         using (cmd = new SqlCommand())
         {
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_Login";
+            cmd.CommandText = "sp_fetchuserinfo";
             cmd.Connection = Getconnected.getconnecting();
             cmd.Parameters.AddWithValue("@Email", P.LoginUsername);
             cmd.Parameters.AddWithValue("@Password", P.LoginPassword);
