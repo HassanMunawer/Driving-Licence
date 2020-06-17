@@ -218,6 +218,13 @@ public class Properties
     public int SprintInsertReturnReason_FK_Createdby { get; set; }
     //insertion end//
 
+
+    //updation start//
+    public int SprintUpdateCountry_ID { get; set; }
+    public string SprintUpdateCountry_CountryName { get; set; }
+    public int SprintUpdateCountry_FK_Updatedby { get; set; }
+    public int SprintEditCountryForm { get; set; }
+    //updation end//
     // sprint dashboard area end //
 
 

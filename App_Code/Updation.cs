@@ -201,4 +201,23 @@ public class Updation
         }
     }
 
+    // sprint dashboard area start //
+
+    public void SprintUpdateCountry(Properties P)
+    {
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_updatecountry";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintUpdateCountry_ID);
+            cmd.Parameters.AddWithValue("@country", P.SprintUpdateCountry_CountryName);
+            cmd.Parameters.AddWithValue("@FK_Updatedon", P.SprintUpdateCountry_FK_Updatedby);
+            cmd.ExecuteNonQuery();
+
+        }
+    }
+
+    // sprint dashboard area end //
+
 }
