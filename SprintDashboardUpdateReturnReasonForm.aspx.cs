@@ -10,7 +10,7 @@ public partial class SprintDashboardUpdateReturnReasonForm : System.Web.UI.Page
 {
     DataTable table = new DataTable();
     Properties variables = new Properties();
-    Insertion insert = new Insertion();
+    Updation update = new Updation();
     edit ed = new edit();
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -40,11 +40,42 @@ public partial class SprintDashboardUpdateReturnReasonForm : System.Web.UI.Page
 
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
+        try
+        {
+            variables.SprintUpdateReturnReason_ID = Convert.ToInt16(slcteditReason.SelectedValue);
+            variables.SprintUpdateReturnReason_Reason = txtReason.Value;
+            variables.SprintUpdateReturnReason_FK_Updatedby = Convert.ToInt16(Session["username"]);
+            update.SprintUpdateReturnReason(variables);
 
+
+            txtReason.Value = "";
+
+            slcteditReason.DataSource = Dropdown.GetSprintDashboardDropdownReturnReason();
+            slcteditReason.DataTextField = "Text";
+            slcteditReason.DataValueField = "Value";
+            slcteditReason.DataBind();
+
+
+            slcteditReason.DataSource = Dropdown.GetSprintDashboardDropdownReturnReason();
+            slcteditReason.DataTextField = "Text";
+            slcteditReason.DataValueField = "Value";
+            slcteditReason.DataBind();
+        }
+        catch (Exception ex) { }
     }
 
     protected void slcteditReason_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
+            variables.SprintEditReturnReasonForm = Convert.ToInt16(slcteditReason.SelectedValue);
+            table = ed.SprintEditReturnReasonForm(variables);
 
+            txtReason.Value = table.Rows[0][1].ToString().Trim();
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 }

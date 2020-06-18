@@ -18,7 +18,7 @@ public partial class SprintDashboardAddUsersForm : System.Web.UI.Page
     {
         p.SprintInsertUserInfo_email = txtEmail.Value;
         p.SprintInsertUserInfo_Password = txtPassword.Value;
-        p.SprintInsertUserInfo_Role = "abc";
+        p.SprintInsertUserInfo_Role = "1";
 
         insert.SprintInsertUserInfo(p);
     }

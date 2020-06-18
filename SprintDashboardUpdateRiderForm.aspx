@@ -76,9 +76,9 @@
                                                             </div>
 
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">E-Mail</label>
+                                                                <label class="col-sm-2 col-form-label">E-Mail / CNIC</label>
                                                                 <div class="col-sm-10">
-                                                                    <input id="txtemail" runat="server" type="text" class="form-control" name="name"  placeholder="E-Mail">
+                                                                    <input id="txtemail" runat="server" type="text" class="form-control" name="name"  placeholder="E-Mail / CNIC">
                                                                     <span class="messages"></span>
                                                                      
                                                                 </div>

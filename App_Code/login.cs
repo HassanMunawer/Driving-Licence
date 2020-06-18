@@ -18,6 +18,7 @@ public class login
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_fetchuserinfo";
             cmd.Connection = Getconnected.getconnecting();
+            //cmd.Parameters.AddWithValue("@id", P.LoginID);
             cmd.Parameters.AddWithValue("@Email", P.LoginUsername);
             cmd.Parameters.AddWithValue("@Password", P.LoginPassword);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

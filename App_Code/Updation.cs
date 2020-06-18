@@ -218,6 +218,88 @@ public class Updation
         }
     }
 
+    public void SprintUpdateCity(Properties P)
+    {
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_updatecity";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintUpdateCity_ID);
+            cmd.Parameters.AddWithValue("@city", P.SprintUpdateCity_CityName);
+            cmd.Parameters.AddWithValue("@FK_Updateon", P.SprintUpdateCity_FK_Updatedby);
+            cmd.ExecuteNonQuery();
+
+        }
+    }
+
+
+    public void SprintUpdateDistrict(Properties P)
+    {
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_Update_District";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintUpdateDistrict_ID);
+            cmd.Parameters.AddWithValue("@district", P.SprintUpdateDistrict_DistrictName);
+            cmd.Parameters.AddWithValue("@FK_Updateon", P.SprintUpdateDistrict_FK_Updatedby);
+            cmd.ExecuteNonQuery();
+
+        }
+    }
+
+
+    public void SprintUpdateReturnReason(Properties P)
+    {
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_updatereturnreason";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintUpdateReturnReason_ID);
+            cmd.Parameters.AddWithValue("@reason", P.SprintUpdateReturnReason_Reason);
+            cmd.Parameters.AddWithValue("@FK_Updatedon", P.SprintUpdateReturnReason_FK_Updatedby);
+            cmd.ExecuteNonQuery();
+
+        }
+    }
+
+
+    public void SprintUpdateRider(Properties P)
+    {
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_updaterider";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintUpdateRider_ID);
+            cmd.Parameters.AddWithValue("@rider", P.SprintUpdateRider_Name);
+            cmd.Parameters.AddWithValue("@cnic", P.SprintUpdateRider_CNIC);
+            cmd.Parameters.AddWithValue("@address", P.SprintUpdateRider_Address);
+            cmd.Parameters.AddWithValue("@phone", P.SprintUpdateRider_Phone);
+            cmd.Parameters.AddWithValue("@FK_Updatedon", P.SprintUpdateRider_FK_Updatedby);
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+
+    public void SprintUpdateUser(Properties P)
+    {
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_updateuserinfo";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintUpdateUserInfo_ID);
+            cmd.Parameters.AddWithValue("@email", P.SprintUpdateUserInfo_Email);
+            cmd.Parameters.AddWithValue("@password", P.SprintUpdateUserInfo_Password);
+            //cmd.Parameters.AddWithValue("@role", P.AdminUpdateuserrole);
+            cmd.ExecuteNonQuery();
+
+        }
+    }
+
     // sprint dashboard area end //
 
 }

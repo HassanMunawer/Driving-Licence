@@ -30,4 +30,89 @@ public class edit
         }
 
     }
+
+
+    public DataTable SprintEditCityForm(Properties P)
+    {
+        DataTable table = new DataTable();
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_fetchcity";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintEditCityForm);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(table);
+            return table;
+        }
+
+    }
+
+
+    public DataTable SprintEditDistrictForm(Properties P)
+    {
+        DataTable table = new DataTable();
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_fetchdistrict";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintEditDistrictForm);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(table);
+            return table;
+        }
+
+    }
+
+
+    public DataTable SprintEditReturnReasonForm(Properties P)
+    {
+        DataTable table = new DataTable();
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_fetchreturnreason";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintEditReturnReasonForm);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(table);
+            return table;
+        }
+
+    }
+
+
+    public DataTable SprintEditRiderForm(Properties P)
+    {
+        DataTable table = new DataTable();
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_fetchrider";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintEditRiderForm);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(table);
+            return table;
+        }
+
+    }
+
+
+    public DataTable SprintEditUserForm(Properties P)
+    {
+        DataTable table = new DataTable();
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_Fetch_UserInfo";
+            cmd.Connection = Getconnected.getconnecting();
+            cmd.Parameters.AddWithValue("@id", P.SprintEditUserForm);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(table);
+            return table;
+        }
+
+    }
 }

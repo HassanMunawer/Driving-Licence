@@ -8,6 +8,7 @@ public class Properties
 
 
     // Login Start
+    public int LoginID { get; set; }
     public string LoginUsername { get; set; }
     public string LoginPassword { get; set; }
     // Login End
@@ -224,6 +225,34 @@ public class Properties
     public string SprintUpdateCountry_CountryName { get; set; }
     public int SprintUpdateCountry_FK_Updatedby { get; set; }
     public int SprintEditCountryForm { get; set; }
+
+    public int SprintUpdateCity_ID { get; set; }
+    public string SprintUpdateCity_CityName { get; set; }
+    public int SprintUpdateCity_FK_Updatedby { get; set; }
+    public int SprintEditCityForm { get; set; }
+
+    public int SprintUpdateDistrict_ID { get; set; }
+    public string SprintUpdateDistrict_DistrictName { get; set; }
+    public int SprintUpdateDistrict_FK_Updatedby { get; set; }
+    public int SprintEditDistrictForm { get; set; }
+
+    public int SprintUpdateReturnReason_ID { get; set; }
+    public string SprintUpdateReturnReason_Reason { get; set; }
+    public int SprintUpdateReturnReason_FK_Updatedby { get; set; }
+    public int SprintEditReturnReasonForm { get; set; }
+
+    public int SprintUpdateRider_ID { get; set; }
+    public string SprintUpdateRider_Name { get; set; }
+    public string SprintUpdateRider_CNIC { get; set; }
+    public string SprintUpdateRider_Address { get; set; }
+    public string SprintUpdateRider_Phone { get; set; }
+    public int SprintUpdateRider_FK_Updatedby { get; set; }
+    public int SprintEditRiderForm { get; set; }
+
+    public int SprintUpdateUserInfo_ID { get; set; }
+    public string SprintUpdateUserInfo_Email { get; set; }
+    public string SprintUpdateUserInfo_Password { get; set; }
+    public int SprintEditUserForm { get; set; }
     //updation end//
     // sprint dashboard area end //
 
