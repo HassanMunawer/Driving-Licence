@@ -52,7 +52,7 @@
                                                                 <th>SNO</th>
                                                                 <th>Name</th>
                                                                 <th>Address</th>
-                                                                <th>E-Mail</th>
+                                                                <th>E-Mail / CNIC</th>
                                                                 <th>Phone</th>
                                                             </tr>
                                                         </thead>
@@ -61,13 +61,13 @@
                                                                 <th>SNO</th>
                                                                 <th>Name</th>
                                                                 <th>Address</th>
-                                                                <th>E-Mail</th>
+                                                                <th>E-Mail / CNIC</th>
                                                                 <th>Phone</th>
                                                             </tr>
                                                         </tfoot>
                                                       
                                                          <tbody>
-                                                         <%-- <%= getattendance() %>--%>
+                                                          <%= getattendance() %>
                                                         </tbody>
                                                     </table>
                                                 </div>

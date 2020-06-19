@@ -16,38 +16,36 @@ public partial class SprintDashboardTotalRidersReport : System.Web.UI.Page
     private static SqlDataReader sdr;
     protected void Page_Load(object sender, EventArgs e)
     {
-        //getattendance();
+        getattendance();
     }
 
-    //public string getattendance()
-    //{
-    //    string data = "";
-    //    using (cmd = new SqlCommand())
-    //    {
-    //        cmd.CommandType = CommandType.StoredProcedure;
-    //        cmd.CommandText = "sp_DataEntryStep2";
-    //        cmd.Connection = Getconnected.getconnecting();
-    //        using (sdr = cmd.ExecuteReader())
-    //        {
-    //            if (sdr.HasRows)
-    //            {
-    //                while (sdr.Read())
-    //                {
-    //                    int sno = Convert.ToInt16(sdr[0]);
-    //                    string inword = Convert.ToString(sdr[1]);
-    //                    string inworddate = Convert.ToDateTime(sdr[2]).ToLongDateString();
-    //                    string outwarddatetime = Convert.ToDateTime(sdr[3]).ToLongDateString() + " " + Convert.ToDateTime(sdr[3]).ToShortTimeString();
-    //                    string Employeename = Convert.ToString(sdr[4]);
-    //                    string department = Convert.ToString(sdr[5]);
-    //                    string reson = Convert.ToString(sdr[6]);
-    //                    string user = Convert.ToString(sdr[7]);
-    //                    data += "<tr><td>" + sno + "</td><td>" + inword + "</td><td>" + inworddate + "</td><td>"
-    //                        + outwarddatetime + "</td><td>" + Employeename + "</td><td>" + department + "</td><td>" + reson + "</td><td>"
-    //                        + user + "</td></tr>";
-    //                }
-    //            }
-    //        }
-    //        return data;
-    //    }
-    //}
+    public string getattendance()
+    {
+        string data = "";
+        using (cmd = new SqlCommand())
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_SprintDashboardTotalRiderReport";
+            cmd.Connection = Getconnected.getconnecting();
+            using (sdr = cmd.ExecuteReader())
+            {
+                if (sdr.HasRows)
+                {
+                    while (sdr.Read())
+                    {
+                        int sno = Convert.ToInt16(sdr[0]);
+                        string Name = Convert.ToString(sdr[1]);
+                        string Address = Convert.ToString(sdr[2]);
+                        string email = Convert.ToString(sdr[3]);
+                        string phone = Convert.ToString(sdr[4]);
+                        //string outwarddatetime = Convert.ToDateTime(sdr[3]).ToLongDateString() + " " + Convert.ToDateTime(sdr[3]).ToShortTimeString();
+
+                        data += "<tr><td>" + sno + "</td><td>" + Name + "</td><td>"
+                            + Address + "</td><td>" + email + "</td><td>" + phone + "</td></tr>";
+                    }
+                }
+            }
+            return data;
+        }
+    }
 }
