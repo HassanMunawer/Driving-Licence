@@ -71,7 +71,7 @@
                                                         </tfoot>
                                                       
                                                          <tbody>
-                                                         <%-- <%= getattendance() %>--%>
+                                                          <%= getattendance() %>
                                                         </tbody>
                                                     </table>
                                                 </div>
